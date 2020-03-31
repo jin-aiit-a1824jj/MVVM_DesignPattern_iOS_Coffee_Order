@@ -52,4 +52,27 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
     
+    @IBOutlet weak var  nameTextField: UITextField!
+    @IBOutlet weak var  emailTextField: UITextField!
+    
+    
+    @IBAction func save(_ sender: Any) {
+        let name = self.nameTextField.text
+        let email = self.emailTextField.text
+        
+        let selectedSize = self.coffeeSizesSegementedControl.titleForSegment(at: self.coffeeSizesSegementedControl.selectedSegmentIndex)
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow else {
+            fatalError("Error in selecting coffee!")
+        }
+        
+        self.vm.name = name
+        self.vm.email = email
+        
+        self.vm.selectedSize = selectedSize
+        self.vm.selectedType = self.vm.types[indexPath.row]
+        
+    }
+    
+    
 }
