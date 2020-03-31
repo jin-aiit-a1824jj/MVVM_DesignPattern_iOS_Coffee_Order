@@ -116,7 +116,11 @@
                         <viewLayoutGuide key="safeArea" id="GFs-84-RaJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="C69-4f-iz2">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="jHH-ND-y9a"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="jHH-ND-y9a">
+                            <connections>
+                                <action selector="close:" destination="jij-Yc-io0" id="bvp-YT-wue"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="IXE-E8-kgr">
                             <connections>
                                 <action selector="save:" destination="jij-Yc-io0" id="8ge-v8-33v"/>

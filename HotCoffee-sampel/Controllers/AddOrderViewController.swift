@@ -75,7 +75,17 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
         Webservice().load(resource: Order.create(vm: self.vm)){ result in
             
             switch result {
-                case .success(let order): print (order as Any)
+                case .success(let order):
+                    
+                    if let order = order, let delegate = self.delegate {
+                        DispatchQueue.main.async {
+                            delegate.addCoffeeOrderViewControllerDidSave(order: order, controller: self)
+                        }
+                    }
+                    
+                    print (order as Any)
+                
+                
                 case .failure(let error): print(error as Any)
             }
             
@@ -83,5 +93,16 @@ class AddOrderNewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    var delegate : AddCoffeeOrderDelegate?
     
+    @IBAction func close(_ sender: Any) {
+        if let delegate = self.delegate {
+            delegate.addCoffeeOrderViewControllerDidClose(controller: self)
+        }
+    }
+}
+
+protocol AddCoffeeOrderDelegate {
+    func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController)
+    func addCoffeeOrderViewControllerDidClose(controller: UIViewController)
 }

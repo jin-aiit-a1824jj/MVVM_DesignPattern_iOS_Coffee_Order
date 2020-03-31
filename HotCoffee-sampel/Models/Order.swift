@@ -55,7 +55,7 @@ extension Order {
         
         let order = Order(vm)
         
-        guard let url = URL(string: "") else {
+        guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else {
             fatalError("URL is Incorrect!")
         }
         
