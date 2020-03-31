@@ -15,18 +15,12 @@ class OrdersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //populateOrders()
+        populateOrders()
     }
     
     private func populateOrders(){
         
-        guard let coffeeOrdersURL = URL(string: "") else {
-            fatalError("URL was incorrect")
-        }
-        
-        let resource = Resource<[Order]>(url: coffeeOrdersURL)
-        
-        Webservice().load(resource: resource){ [weak self] result in
+        Webservice().load(resource: Order.all){ [weak self] result in
             switch result {
                 case .success(let orders):
                     print(orders)
