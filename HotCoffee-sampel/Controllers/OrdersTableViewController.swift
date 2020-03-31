@@ -15,7 +15,7 @@ class OrdersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        populateOrders()
+        //populateOrders()
     }
     
     private func populateOrders(){
