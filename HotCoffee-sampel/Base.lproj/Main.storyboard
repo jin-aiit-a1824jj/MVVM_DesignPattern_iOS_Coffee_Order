@@ -49,10 +49,66 @@
                     <view key="view" contentMode="scaleToFill" id="GTl-Ok-VLB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4FM-bD-kKs">
+                                <rect key="frame" x="0.0" y="56" width="414" height="421"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hCo-nl-qM1">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hCo-nl-qM1" id="rW0-TF-efW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Aqn-dL-6NP">
+                                <rect key="frame" x="104" y="504" width="206" height="32"/>
+                                <segments>
+                                    <segment title="Small"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Large"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SdS-Py-KQS">
+                                <rect key="frame" x="107" y="622" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0AX-uC-8o8"/>
+                                    <constraint firstAttribute="width" constant="200" id="SJa-mI-fmQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="swA-bW-tUM">
+                                <rect key="frame" x="107" y="664" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GxS-Ah-Kr5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Aqn-dL-6NP" firstAttribute="top" secondItem="4FM-bD-kKs" secondAttribute="bottom" constant="27" id="7sG-wc-l9j"/>
+                            <constraint firstItem="swA-bW-tUM" firstAttribute="top" secondItem="SdS-Py-KQS" secondAttribute="bottom" constant="8" id="F4F-sE-DjL"/>
+                            <constraint firstItem="SdS-Py-KQS" firstAttribute="centerX" secondItem="GTl-Ok-VLB" secondAttribute="centerX" id="Ga6-Te-XDb"/>
+                            <constraint firstItem="swA-bW-tUM" firstAttribute="centerX" secondItem="GTl-Ok-VLB" secondAttribute="centerX" id="GzN-I1-B2n"/>
+                            <constraint firstItem="4FM-bD-kKs" firstAttribute="top" secondItem="GFs-84-RaJ" secondAttribute="top" id="PLa-Tg-eBN"/>
+                            <constraint firstItem="Aqn-dL-6NP" firstAttribute="centerX" secondItem="GTl-Ok-VLB" secondAttribute="centerX" id="hzM-Pr-Mbu"/>
+                            <constraint firstItem="4FM-bD-kKs" firstAttribute="height" secondItem="GTl-Ok-VLB" secondAttribute="height" multiplier="0.5" id="lDn-MG-ehv"/>
+                            <constraint firstItem="4FM-bD-kKs" firstAttribute="leading" secondItem="GFs-84-RaJ" secondAttribute="leading" id="lQn-GL-Fzy"/>
+                            <constraint firstItem="SdS-Py-KQS" firstAttribute="top" secondItem="Aqn-dL-6NP" secondAttribute="bottom" constant="87" id="rt8-al-XMf"/>
+                            <constraint firstItem="4FM-bD-kKs" firstAttribute="width" secondItem="GTl-Ok-VLB" secondAttribute="width" id="zh3-qi-1Wf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GFs-84-RaJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Order" id="C69-4f-iz2"/>
+                    <navigationItem key="navigationItem" title="Add New Order" id="C69-4f-iz2">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="jHH-ND-y9a"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="IXE-E8-kgr"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miS-ow-hpC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
